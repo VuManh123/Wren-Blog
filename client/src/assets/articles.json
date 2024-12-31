@@ -1,0 +1,182 @@
+[
+  {
+    "title": "The Best Travel ",
+    "id": 1,
+    "slug": "best-travel-destinations-2024",
+    "excerpt": "đây là bài viết 1",
+    "author": {
+      "id" :1,
+      "name": "Duy Nguyen",
+      "date": "2024-02-15",
+      "profileImage": "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/288036829_765297354484867_8309434000439437708_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEkdH3I4PbAQqL9fOSmMAmbAyWnOmQ7VAQDJac6ZDtUBDD46iKOAWqHLHmLA3P8USWda-xnb1lF_3aU59NHlH4N&_nc_ohc=hb9wGJzsXDgQ7kNvgEzn9cS&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Aqv5O7Iki5pG4fHu0cFNo9X&oh=00_AYBVnWmKyy37MWT2-AGWij5xHM4DxNOUvIQoic_Nf2dDbg&oe=67414FEC"
+    },
+    "image": "https://i.pinimg.com/originals/b2/46/8f/b2468f173babb6aacd76a75ba5d65056.png",
+    "content": " bài 1 JavaScript closures are a fundamental concept for mastering the language. A closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.",
+    "created_at": "2024-10-15T10:00:00Z",
+    "updated_at": "2024-10-16T12:00:00Z",
+    "categoryId": 1,
+    "languageId":1
+  },{
+    "title": "The Best Travel bài 2 ",
+    "id": 2,
+    "slug": "best-travel-destinations-2024",
+    "excerpt": "đây là bài viết 2",
+    "author": {
+      "id" :1,
+      "name": "Duy Nguyen",
+      "date": "2024-02-15",
+      "profileImage": "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/288036829_765297354484867_8309434000439437708_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEkdH3I4PbAQqL9fOSmMAmbAyWnOmQ7VAQDJac6ZDtUBDD46iKOAWqHLHmLA3P8USWda-xnb1lF_3aU59NHlH4N&_nc_ohc=hb9wGJzsXDgQ7kNvgEzn9cS&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Aqv5O7Iki5pG4fHu0cFNo9X&oh=00_AYBVnWmKyy37MWT2-AGWij5xHM4DxNOUvIQoic_Nf2dDbg&oe=67414FEC"
+    },
+    "image": "https://photo.znews.vn/w660/Uploaded/mdf_eioxrd/2021_07_06/2.jpg",
+    "content": " bài 2 JavaScript closures are a fundamental concept for mastering the language. A closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.",
+    "created_at": "2024-10-15T10:00:00Z",
+    "updated_at": "2024-10-16T12:00:00Z",
+    "categoryId": 1,
+    "languageId":2
+  },{
+    "title": "The Best Travel ",
+    "id": 3,
+    "slug": "best-travel-destinations-2024",
+    "excerpt": "đây là bài viết 3",
+    "author": {
+      "id" :2,
+      "name": "Duy Nguyen",
+      "date": "2024-02-15",
+      "profileImage": "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/288036829_765297354484867_8309434000439437708_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEkdH3I4PbAQqL9fOSmMAmbAyWnOmQ7VAQDJac6ZDtUBDD46iKOAWqHLHmLA3P8USWda-xnb1lF_3aU59NHlH4N&_nc_ohc=hb9wGJzsXDgQ7kNvgEzn9cS&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Aqv5O7Iki5pG4fHu0cFNo9X&oh=00_AYBVnWmKyy37MWT2-AGWij5xHM4DxNOUvIQoic_Nf2dDbg&oe=67414FEC"
+    },
+    "image": "https://i.pinimg.com/originals/b2/46/8f/b2468f173babb6aacd76a75ba5d65056.png",
+    "content": " bài 1 JavaScript closures are a fundamental concept for mastering the language. A closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.",
+    "created_at": "2024-10-15T10:00:00Z",
+    "updated_at": "2024-10-16T12:00:00Z",
+    "categoryId": 1
+  },{
+    "title": "The Best Travel ",
+    "id": 4,
+    "slug": "best-travel-destinations-2024",
+    "excerpt": "đây là bài viết 4",
+    "author": {
+      "id" :2,
+      "name": "Duy Nguyen",
+      "date": "2024-02-15",
+      "profileImage": "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/288036829_765297354484867_8309434000439437708_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEkdH3I4PbAQqL9fOSmMAmbAyWnOmQ7VAQDJac6ZDtUBDD46iKOAWqHLHmLA3P8USWda-xnb1lF_3aU59NHlH4N&_nc_ohc=hb9wGJzsXDgQ7kNvgEzn9cS&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Aqv5O7Iki5pG4fHu0cFNo9X&oh=00_AYBVnWmKyy37MWT2-AGWij5xHM4DxNOUvIQoic_Nf2dDbg&oe=67414FEC"
+    },
+    "image": "https://i.pinimg.com/originals/b2/46/8f/b2468f173babb6aacd76a75ba5d65056.png",
+    "content": " bài 4 JavaScript closures are a fundamental concept for mastering the language. A closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.",
+    "created_at": "2024-10-15T10:00:00Z",
+    "updated_at": "2024-10-16T12:00:00Z",
+    "categoryId": 2
+  },{
+    "title": "The Best Travel ",
+    "id": 5,
+    "slug": "best-travel-destinations-2024",
+    "excerpt": "đây là bài viết 1",
+    "author": {
+      "id" :2,
+      "name": "Duy Nguyen",
+      "date": "2024-02-15",
+      "profileImage": "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/288036829_765297354484867_8309434000439437708_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEkdH3I4PbAQqL9fOSmMAmbAyWnOmQ7VAQDJac6ZDtUBDD46iKOAWqHLHmLA3P8USWda-xnb1lF_3aU59NHlH4N&_nc_ohc=hb9wGJzsXDgQ7kNvgEzn9cS&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Aqv5O7Iki5pG4fHu0cFNo9X&oh=00_AYBVnWmKyy37MWT2-AGWij5xHM4DxNOUvIQoic_Nf2dDbg&oe=67414FEC"
+    },
+    "image": "https://i.pinimg.com/originals/b2/46/8f/b2468f173babb6aacd76a75ba5d65056.png",
+    "content": " bài 1 JavaScript closures are a fundamental concept for mastering the language. A closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.",
+    "created_at": "2024-10-15T10:00:00Z",
+    "updated_at": "2024-10-16T12:00:00Z",
+    "categoryId": 2
+  },{
+    "title": "The Best Travel ",
+    "id": 6,
+    "slug": "best-travel-destinations-2024",
+    "excerpt": "đây là bài viết 1",
+    "author": {
+      "id" :2,
+      "name": "Duy Nguyen",
+      "date": "2024-02-15",
+      "profileImage": "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/288036829_765297354484867_8309434000439437708_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEkdH3I4PbAQqL9fOSmMAmbAyWnOmQ7VAQDJac6ZDtUBDD46iKOAWqHLHmLA3P8USWda-xnb1lF_3aU59NHlH4N&_nc_ohc=hb9wGJzsXDgQ7kNvgEzn9cS&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Aqv5O7Iki5pG4fHu0cFNo9X&oh=00_AYBVnWmKyy37MWT2-AGWij5xHM4DxNOUvIQoic_Nf2dDbg&oe=67414FEC"
+    },
+    "image": "https://i.pinimg.com/originals/b2/46/8f/b2468f173babb6aacd76a75ba5d65056.png",
+    "content": " bài 1 JavaScript closures are a fundamental concept for mastering the language. A closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.",
+    "created_at": "2024-10-15T10:00:00Z",
+    "updated_at": "2024-10-16T12:00:00Z",
+    "categoryId": 3
+  },{
+    "title": "The Best Travel ",
+    "id": 7,
+    "slug": "best-travel-destinations-2024",
+    "excerpt": "đây là bài viết 1",
+    "author": {
+      "id" :2,
+      "name": "Duy Nguyen",
+      "date": "2024-02-15",
+      "profileImage": "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/288036829_765297354484867_8309434000439437708_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEkdH3I4PbAQqL9fOSmMAmbAyWnOmQ7VAQDJac6ZDtUBDD46iKOAWqHLHmLA3P8USWda-xnb1lF_3aU59NHlH4N&_nc_ohc=hb9wGJzsXDgQ7kNvgEzn9cS&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Aqv5O7Iki5pG4fHu0cFNo9X&oh=00_AYBVnWmKyy37MWT2-AGWij5xHM4DxNOUvIQoic_Nf2dDbg&oe=67414FEC"
+    },
+    "image": "https://i.pinimg.com/originals/b2/46/8f/b2468f173babb6aacd76a75ba5d65056.png",
+    "content": " bài 1 JavaScript closures are a fundamental concept for mastering the language. A closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.",
+    "created_at": "2024-10-15T10:00:00Z",
+    "updated_at": "2024-10-16T12:00:00Z",
+    "categoryId": 4
+  },{
+    "title": "The Best Travel ",
+    "id": 8,
+    "slug": "best-travel-destinations-2024",
+    "excerpt": "đây là bài viết 1",
+    "author": {
+      "id" :2,
+      "name": "Duy Nguyen",
+      "date": "2024-02-15",
+      "profileImage": "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/288036829_765297354484867_8309434000439437708_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEkdH3I4PbAQqL9fOSmMAmbAyWnOmQ7VAQDJac6ZDtUBDD46iKOAWqHLHmLA3P8USWda-xnb1lF_3aU59NHlH4N&_nc_ohc=hb9wGJzsXDgQ7kNvgEzn9cS&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Aqv5O7Iki5pG4fHu0cFNo9X&oh=00_AYBVnWmKyy37MWT2-AGWij5xHM4DxNOUvIQoic_Nf2dDbg&oe=67414FEC"
+    },
+    "image": "https://i.pinimg.com/originals/b2/46/8f/b2468f173babb6aacd76a75ba5d65056.png",
+    "content": " bài 1 JavaScript closures are a fundamental concept for mastering the language. A closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.",
+    "created_at": "2024-10-15T10:00:00Z",
+    "updated_at": "2024-10-16T12:00:00Z",
+    "categoryId": 1
+  },{
+    "title": "The Best Travel ",
+    "id": 9,
+    "slug": "best-travel-destinations-2024",
+    "excerpt": "đây là bài viết 1",
+    "author": {
+      "id" :2,
+      "name": "Duy Nguyen",
+      "date": "2024-02-15",
+      "profileImage": "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/288036829_765297354484867_8309434000439437708_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEkdH3I4PbAQqL9fOSmMAmbAyWnOmQ7VAQDJac6ZDtUBDD46iKOAWqHLHmLA3P8USWda-xnb1lF_3aU59NHlH4N&_nc_ohc=hb9wGJzsXDgQ7kNvgEzn9cS&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Aqv5O7Iki5pG4fHu0cFNo9X&oh=00_AYBVnWmKyy37MWT2-AGWij5xHM4DxNOUvIQoic_Nf2dDbg&oe=67414FEC"
+    },
+    "image": "https://i.pinimg.com/originals/b2/46/8f/b2468f173babb6aacd76a75ba5d65056.png",
+    "content": " bài 1 JavaScript closures are a fundamental concept for mastering the language. A closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.",
+    "created_at": "2024-10-15T10:00:00Z",
+    "updated_at": "2024-10-16T12:00:00Z",
+    "categoryId": 2
+  },{
+    "title": "The Best Travel ",
+    "id": 10,
+    "slug": "best-travel-destinations-2024",
+    "excerpt": "đây là bài viết 1",
+    "author": {
+      "id" :2,
+      "name": "Duy Nguyen",
+      "date": "2024-02-15",
+      "profileImage": "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/288036829_765297354484867_8309434000439437708_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEkdH3I4PbAQqL9fOSmMAmbAyWnOmQ7VAQDJac6ZDtUBDD46iKOAWqHLHmLA3P8USWda-xnb1lF_3aU59NHlH4N&_nc_ohc=hb9wGJzsXDgQ7kNvgEzn9cS&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Aqv5O7Iki5pG4fHu0cFNo9X&oh=00_AYBVnWmKyy37MWT2-AGWij5xHM4DxNOUvIQoic_Nf2dDbg&oe=67414FEC"
+    },
+    "image": "https://i.pinimg.com/originals/b2/46/8f/b2468f173babb6aacd76a75ba5d65056.png",
+    "content": " bài 1 JavaScript closures are a fundamental concept for mastering the language. A closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.",
+    "created_at": "2024-10-15T10:00:00Z",
+    "updated_at": "2024-10-16T12:00:00Z",
+    "categoryId": 1
+  },{
+    "title": "The Best Travel ",
+    "id": 11,
+    "slug": "best-travel-destinations-2024",
+    "excerpt": "đây là bài viết 1",
+    "author": {
+      "id" :2,
+      "name": "Duy Nguyen",
+      "date": "2024-02-15",
+      "profileImage": "https://scontent.fhan19-1.fna.fbcdn.net/v/t39.30808-6/288036829_765297354484867_8309434000439437708_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEkdH3I4PbAQqL9fOSmMAmbAyWnOmQ7VAQDJac6ZDtUBDD46iKOAWqHLHmLA3P8USWda-xnb1lF_3aU59NHlH4N&_nc_ohc=hb9wGJzsXDgQ7kNvgEzn9cS&_nc_zt=23&_nc_ht=scontent.fhan19-1.fna&_nc_gid=Aqv5O7Iki5pG4fHu0cFNo9X&oh=00_AYBVnWmKyy37MWT2-AGWij5xHM4DxNOUvIQoic_Nf2dDbg&oe=67414FEC"
+    },
+    "image": "https://i.pinimg.com/originals/b2/46/8f/b2468f173babb6aacd76a75ba5d65056.png",
+    "content": " bài 1 JavaScript closures are a fundamental concept for mastering the language. A closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.",
+    "created_at": "2024-10-15T10:00:00Z",
+    "updated_at": "2024-10-16T12:00:00Z",
+    "categoryId": 1
+  }
+  
+]

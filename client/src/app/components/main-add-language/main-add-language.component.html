@@ -1,0 +1,27 @@
+<div class="add-post-container">
+    <h2 class="title">Add Language</h2>
+    <form (submit)="onSubmit($event)" class="add-post-form">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" [(ngModel)]="post.title" name="title" required
+                placeholder="Enter post title" />
+        </div>
+        <div class="form-group">
+            <label for="language">Language</label>
+            <select [(ngModel)]="post.languageId" name="language" id="language" required>
+              <option *ngFor="let language of languages" [value]="language.id">
+                {{ language.flag }} {{ language.name }}
+              </option>
+            </select>
+          </div>
+        
+        <div class="form-group">
+            <label for="content">Content</label>
+            <div #editor class="editor"></div>
+        </div>
+  
+        <div class="form-group">
+            <button type="submit" class="btn-submit">Add Language</button>
+        </div>
+    </form>
+  </div>

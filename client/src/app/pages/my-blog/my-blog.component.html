@@ -1,0 +1,104 @@
+<!-- Header -->
+<header class="header" data-header>
+  <div class="container">
+    <button class="menu-toggle" aria-label="Toggle Sidebar">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Tìm kiếm bài viết..." aria-label="Search">
+      <button type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="main">
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <a routerLink="/user" class="logo-2">
+        <img src="./assets/images/logo.svg" width="120" height="37" alt="Wren logo">
+      </a>
+
+      <div class="add-post">
+        <a routerLink="/new-blog">
+          <i class="fa-solid fa-plus"></i> New Post
+        </a>
+      </div>
+      <hr>
+      <ul>
+        <li>
+          <a routerLink="/my-blog">
+            <i class="fa-solid fa-newspaper"></i>
+            Posts
+          </a>
+        </li>
+        <li>
+          <a routerLink="/user">
+            <i class="fa-solid fa-gear"></i>
+            Setting
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+
+    <!-- Posts Section -->
+    <section class="posts">
+      <ul class="grid-list">
+        <li *ngFor="let blog of blogs">
+          <div class="recent-post-card">
+            <!-- Ảnh bài viết -->
+            <figure class="card-banner img-holder" style="--width: 271; --height: 180;">
+              <img [src]="blog.image" [alt]="blog.title" width="271" height="180" loading="lazy" class="img-cover" />
+            </figure>
+
+            <!-- Nội dung bài viết -->
+            <div class="card-content">
+              <a [routerLink]="['/categories', blog.category.id]" class="card-badge">
+                {{ blog.category.name || 'Uncategorized' }}
+              </a>
+
+              <div class="action-buttons">
+                <button (click)="onEdit(blog.id)" class="btn-edit">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button (click)="onDelete(blog.id)" class="btn-delete">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+                <button (click)="addLanguage(blog.id)" class="btn-addlanguage">
+                  <i class="fa-solid fa-language"></i>
+                </button>
+              </div>
+
+              <!-- Tiêu đề bài viết -->
+              <h3 class="headline headline-3 card-title">
+                <a [routerLink]="['/blog-detail', blog.id]" class="link hover-2">{{ blog.title }}</a>
+              </h3>
+
+              <!-- Trích đoạn bài viết -->
+              <p class="card-text">{{ blog.excerpt }}</p>
+
+              <!-- Thông tin tác giả -->
+              <div class="card-wrapper">
+                <div class="wrapper">
+                  <span>{{ blog.author.name }}</span>
+                </div>
+              </div>
+              <div class="card-wrapper">
+                <div class="wrapper">
+                  <span>{{ blog.createdAt | date: 'mediumDate' }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+</main>

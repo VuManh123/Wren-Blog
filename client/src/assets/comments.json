@@ -1,0 +1,29 @@
+[
+    {
+        "content": "Duy đẹp trai",
+        "created_at": "2022-04-15T10:30:00Z",
+        "user": {
+            "name": "Jane Cooper",
+            "image": "./assets/images/author-6.png"
+        },
+        "blog_id": 1
+    },
+    {
+        "content": "Another comment for the same blog post with a new perspective.",
+        "created_at": "2022-04-16T14:45:00Z",
+        "user": {
+            "name": "Katen Doe",
+            "image": "./assets/images/author-7.png"
+        },
+        "blog_id": 1
+    },
+    {
+        "content": "This is a comment on a different blog post.",
+        "created_at": "2022-04-17T08:20:00Z",
+        "user": {
+            "name": "Barbara Cartland",
+            "image": "./assets/images/author-8.png"
+        },
+        "blog_id": 2
+    }
+] 

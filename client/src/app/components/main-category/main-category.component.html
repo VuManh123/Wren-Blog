@@ -1,0 +1,93 @@
+<section class="section recent-post" id="recent" aria-labelledby="recent-label">
+    <div class="container">
+
+        <div class="post-main">
+            <h2 class="headline headline-2 section-title">
+                <span class="span">Articles in the category</span>
+            </h2>
+
+            <p class="section-text">
+                Don't miss the latest trends
+            </p>
+
+            <ul class="grid-list">
+                <li
+                    *ngFor="let article of articles.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage)">
+                    <div class="recent-post-card">
+                        <figure class="card-banner img-holder" style="--width: 271; --height: 258;">
+                            <img [src]="article.image" [alt]="article.title" width="271" height="258" loading="lazy"
+                                class="img-cover">
+                        </figure>
+
+                        <div class="card-content">
+                            <!-- Hiển thị danh mục bài viết (nếu có) -->
+                            <a [routerLink]="['/categories', article.category.id]" class="card-badge">
+                                {{ article.category.name }}
+                            </a>
+
+                            <!-- Tiêu đề bài viết -->
+                            <h3 class="headline headline-3 card-title">
+                                <a [routerLink]="['/blog-detail', article.id]" class="link hover-2">{{ article.title
+                                    }}</a>
+                            </h3>
+
+                            <!-- Tóm tắt bài viết -->
+                            <p class="card-text">
+                                {{ article.excerpt || 'No excerpt available.' }}
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Các nút phân trang -->
+            <div class="pagination">
+                <button class="pagination-btn" (click)="currentPage = currentPage - 1" [disabled]="currentPage <= 0"><i
+                        class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+                <!-- <a class="pagination-btn">1</a> -->
+                <a class="pagination-btn" aria-label="more page">...</a>
+                <button class="pagination-btn" (click)="currentPage = currentPage + 1"
+                    [disabled]="currentPage >= (articles.length / itemsPerPage) - 1"><i class="fa-solid fa-arrow-right"
+                        aria-hidden="true"></i></button>
+            </div>
+        </div>
+
+
+        <!-- Sidebar with other categories -->
+        <div class="post-aside grid-list">
+            <div class="card aside-card">
+
+                <h3 class="headline headline-2 aside-title">
+                    <span class="span">Other Categories</span>
+                </h3>
+
+                <ul class="popular-list">
+                    <li *ngFor="let category of categories">
+                        <div class="popular-card">
+                            <figure class="card-banner img-holder" style="--width: 64; --height: 64;">
+                                <img [src]="category.imageUrl" width="64" height="64" loading="lazy"
+                                    alt="{{ category.name }}" class="img-cover">
+                            </figure>
+
+                            <div class="card-content">
+                                <h4 class="headline headline-4 card-title">
+                                    <!-- Điều hướng đến trang danh mục tương ứng -->
+                                    <a [routerLink]="['/categories', category.id]" class="link hover-2">
+                                        {{ category.name }}
+                                    </a>
+                                </h4>
+
+                                <div class="warpper">
+                                    <time class="publish-date" [attr.datetime]="category.created_at">
+                                        Created: {{ category.created_at | date: 'd MMM yyyy' }}
+                                    </time>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</section>

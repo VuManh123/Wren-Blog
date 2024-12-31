@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "data": [
+      {
+          "id": 1,
+          "name": "Technology",
+          "slug": "technology",
+          "imageUrl": "https://images2.thanhnien.vn/528068263637045248/2024/1/25/c3c8177f2e6142e8c4885dbff89eb92a-65a11aeea03da880-1706156293184503262817.jpg",
+          "description": "Everything about the latest in technology, gadgets, and software.",
+          "articleCount": 5,
+          "created_at": "2024-11-29T07:52:20.000Z",
+          "updated_at": "2024-11-29T07:52:20.000Z"
+      },
+      {
+          "id": 2,
+          "name": "Health & Wellness",
+          "slug": "health-wellness",
+          "imageUrl": "https://images2.thanhnien.vn/528068263637045248/2024/1/25/c3c8177f2e6142e8c4885dbff89eb92a-65a11aeea03da880-1706156293184503262817.jpg",
+          "description": "Tips and insights for a healthier and balanced lifestyle.",
+          "articleCount": 3,
+          "created_at": "2024-11-29T07:52:20.000Z",
+          "updated_at": "2024-11-29T07:52:20.000Z"
+      },
+      {
+          "id": 3,
+          "name": "Travel",
+          "slug": "travel",
+          "imageUrl": "https://images2.thanhnien.vn/528068263637045248/2024/1/25/c3c8177f2e6142e8c4885dbff89eb92a-65a11aeea03da880-1706156293184503262817.jpg",
+          "description": "Discover amazing places and travel tips around the globe.",
+          "articleCount": 8,
+          "created_at": "2024-11-29T07:52:20.000Z",
+          "updated_at": "2024-11-29T07:52:20.000Z"
+      },
+      {
+          "id": 4,
+          "name": "Education",
+          "slug": "education",
+          "imageUrl": "https://images2.thanhnien.vn/528068263637045248/2024/1/25/c3c8177f2e6142e8c4885dbff89eb92a-65a11aeea03da880-1706156293184503262817.jpg",
+          "description": "Resources and articles to help you learn and grow.",
+          "articleCount": 0,
+          "created_at": "2024-11-29T07:52:20.000Z",
+          "updated_at": "2024-11-29T07:52:20.000Z"
+      }
+  ],
+  "status": 200,
+  "message": "ok"
+}

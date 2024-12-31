@@ -1,0 +1,71 @@
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language-select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #BAE1F2;
+  font-size: 18px;
+  background-color: var(--bg-oxford-blue-2);
+  /* Màu nền */
+  color: #BAE1F2;
+  /* Màu chữ */
+}
+
+.custom-placeholder::placeholder {
+  color: #BAE1F2;
+  /* Màu của placeholder */
+  font-style: italic;
+  /* Kiểu chữ nghiêng (tùy chọn) */
+  opacity: 0.7;
+  /* Độ mờ (tùy chọn) */
+}
+
+.blog-meta {
+  text-align: left;
+  /* Align author and date to the left */
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  /* Increased font size for meta info */
+  color: #9ca3af;
+  /* Grey meta text */
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center the image */
+  margin: 30px 0;
+}
+
+.blog-image {
+  max-width: 100%;
+  /* Ensure image doesn't overflow */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.image-caption {
+  font-size: 1.3rem;
+  /* Slightly larger caption font */
+  color: #9ca3af;
+  text-align: center;
+  /* Caption centered below image */
+}
+
+.blog-content {
+  font-size: 1.4rem;
+  /* Increased font size for content */
+  line-height: 1.8;
+  /* Improved readability with line spacing */
+  color: #d1d5db;
+  text-align: justify;
+  /* Justify text for a cleaner appearance */
+  margin-top: 20px;
+}

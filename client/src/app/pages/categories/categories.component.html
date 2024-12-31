@@ -1,0 +1,12 @@
+<div>
+    <ng-container *ngIf="hasToken; else headerOwner">
+      <app-header></app-header>
+    </ng-container>
+    <ng-template #headerOwner>
+      <app-header-owner></app-header-owner>
+    </ng-template>
+  
+    <app-main-category></app-main-category>
+    <app-footer></app-footer>
+  </div>
+  

@@ -1,0 +1,191 @@
+<main>
+  <article>
+
+    <!-- 
+        - #HERO
+      -->
+
+    <section class="hero" id="home" aria-label="home">
+      <div class="container" style="margin-bottom: 50px;">
+
+        <div class="hero-content">
+
+          <h1 class="headline headline-1 section-title">
+            Welcome to <span class="span">Wren Blog</span>
+          </h1>
+
+          <!-- <p class="hero-text">
+                Explore a wide range of topics updated weekly to enrich your daily reading experience. Join our community and discover something new with every visit!
+            </p> -->
+
+            <div class="input-wrapper">
+              <input
+                type="text"
+                name="blogs"
+                placeholder="Search the articles"
+                required
+                class="input-field"
+                autocomplete="off"
+                [(ngModel)]="searchInput" 
+              >
+              <button class="btn btn-primary" (click)="onSearch()">
+                <span class="span">Search</span>
+              </button>
+            </div>          
+
+        </div>
+
+        <div class="hero-banner">
+
+          <img src="./assets/images/blog-icon.png" width="327" height="490" alt="Wren Clark" class="w-100">
+
+          <img src="./assets/images/pattern-2.svg" width="27" height="26" alt="shape" class="shape shape-1">
+
+          <img src="./assets/images/pattern-3.svg" width="27" height="26" alt="shape" class="shape shape-2">
+
+        </div>
+
+        <img src="./assets/images/shadow-1.svg" width="500" height="800" alt="" class="hero-bg hero-bg-1">
+
+        <img src="./assets/images/shadow-2.svg" width="500" height="500" alt="" class="hero-bg hero-bg-2">
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- 
+        - #TOPICS
+      -->
+
+    <section class="topics" id="topics" aria-labelledby="topic-label">
+      <div class="container">
+
+        <div class="card topic-card">
+
+          <div class="card-content">
+
+            <h2 class="headline headline-2 section-title card-title" id="topic-label">
+              Hot categories
+            </h2>
+
+            <p class="card-text">
+              Don't miss out on the latest news about Travel tips, Hotels review, Food guide...
+            </p>
+
+            <div class="btn-group">
+              <button class="btn-icon" aria-label="previous" data-slider-prev>
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              </button>
+
+              <button class="btn-icon" aria-label="next" data-slider-next>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+
+          </div>
+
+          <div class="slider" data-slider>
+            <ul class="slider-list" data-slider-container>
+              <li *ngFor="let category of categories" class="slider-item">
+                <a [href]="'./categories/' + category.id" class="slider-card">
+                  <figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+                    <img [src]="category.imageUrl" width="507" height="618" loading="lazy" class="img-cover">
+                  </figure>
+                  <div class="slider-content">
+                    <span class="slider-title">{{ category.name }}</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- 
+        - #FEATURED POST
+      -->
+
+    <section class="section feature" aria-label="feature" id="featured">
+      <div class="container">
+
+        <h2 class="headline headline-2 section-title">
+          <span class="span">All articles</span>
+        </h2>
+
+        <p class="section-text">
+          Featured and highly rated articles
+        </p>
+        <!-- <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search articles..." [(ngModel)]="searchTerm"
+          (ngModelChange)="filterArticles()">
+          <button>Search</button>
+        </div> -->
+
+        <ul class="feature-list">
+
+          <li *ngFor="let article of articles">
+            <div class="card feature-card">
+              <figure class="card-banner img-holder" style="--width: 1602; --height: 903;">
+                <img [src]="article.image" [alt]="article.title" width="1602" height="903" loading="lazy"
+                  class="img-cover">
+              </figure>
+
+              <div class="card-content">
+                <div class="card-wrapper">
+
+                  <div class="wrapper">
+                    <!-- Danh mục bài viết -->
+                    <a [href]="'/categories/' + article.category.id" class="card-category">
+                      {{ article.category.name }}
+                    </a>
+                  </div>
+                </div>
+
+                <h3 class="headline headline-3">
+                  <a [href]="'/blog-detail/' + article.id" class="card-title hover-2">
+                    {{ article.title }}
+                  </a>
+                </h3>
+
+                <div class="card-wrapper">
+                  <!-- Thông tin tác giả -->
+                  <div class="profile-card">
+                    <img [src]="article.author.profileImage" width="48" height="48" loading="lazy"
+                      [alt]="article.author.name" class="profile-banner">
+                    <div>
+                      <p class="card-title">{{ article.author.name }}</p>
+                      <p class="card-subtitle">{{ article.createdAt | date: 'mediumDate' }}</p>
+                    </div>
+                  </div>
+
+                  <!-- Nút xem thêm -->
+                  <a [href]="'/blog-detail/' + article.id" class="card-btn">Read more</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Nút tải thêm bài viết -->
+        <a href="#" class="btn btn-secondary">
+          <span class="span">Show More Posts</span>
+        </a>
+      </div>
+
+      <img src="./assets/images/shadow-3.svg" width="500" height="1500" loading="lazy" alt="" class="feature-bg">
+    </section>
+
+  </article>
+</main>

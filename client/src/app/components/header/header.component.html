@@ -1,0 +1,51 @@
+<header class="header" data-header>
+  <div class="container">
+
+    <a href="/user/#home" class="logo">
+      <img src="./assets/images/logo.svg" width="119" height="37" alt="Wren logo">
+    </a>
+
+    <nav class="navbar" data-navbar>
+
+      <div class="navbar-top">
+        <a href="/user/#home" class="logo">
+          <img src="./assets/images/logo.svg" width="119" height="37" alt="Wren logo">
+        </a>
+
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <i class="fa-solid fa-x" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <ul class="navbar-list">
+        <li>
+          <a href="/user/#home" class="navbar-link hover-1" data-nav-toggler>Home</a>
+        </li>
+        <li>
+          <a href="/user/#topics" class="navbar-link hover-1" data-nav-toggler>Categories</a>
+        </li>
+        <li>
+          <a href="/user/#featured" class="navbar-link hover-1" data-nav-toggler>Blogs</a>
+        </li>
+        <li>
+          <a href="/user/#footer" class="navbar-link hover-1" data-nav-toggler>Contact</a>
+        </li>
+        <li>
+          <button class="navbar-link hover-1 logout-btn" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+
+
+      <!-- Khi chua dang nhap nen de la login -->
+
+    </nav>
+
+    <button routerLink="/my-blog" class="btn btn-primary">MyBlog</button>
+
+    <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+
+  </div>
+</header>

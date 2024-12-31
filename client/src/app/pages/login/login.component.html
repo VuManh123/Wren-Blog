@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="login-box">
+        <h2>Đăng nhập</h2>
+        <form (ngSubmit)="onSubmit()">
+            <div class="input-group">
+                <label for="name">Tên người dùng</label>
+                <input type="text" id="name" placeholder="Nhập tên người dùng" [(ngModel)]="name"
+                    name="name" required />
+            </div>
+            <div class="input-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" placeholder="Nhập mật khẩu" [(ngModel)]="password" name="password"
+                    required />
+            </div>
+            <div class="input-group">
+                <div *ngIf="errorMessage" class="error-message">
+                    {{ errorMessage }}
+                </div>
+                <button type="submit">Đăng nhập</button>
+            </div>
+            <div class="input-group">
+                <button (click)="goToRegister()">Chưa có tài khoản? Đăng ký ngay</button>
+                <!-- Thêm nút để chuyển đến Register -->
+            </div>
+        </form>
+    </div>
+</div>

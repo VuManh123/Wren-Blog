@@ -1,0 +1,95 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  .login-box {
+    background-color: #ffffff;
+    /* Màu trắng cho hộp đăng nhập */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #1e3a5f;
+    /* Màu chữ xanh dương đậm */
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  label {
+    color: #1e3a5f;
+    /* Màu chữ xanh dương đậm */
+    font-size: 14px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #007bff;
+    /* Màu xanh cho viền khi focus */
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0056b3;
+    /* Màu xanh đậm cho nút */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #004494;
+    /* Màu xanh nhạt hơn khi hover */
+  }
+  
+  .register-link {
+    margin-top: 15px;
+    /* Khoảng cách trên của liên kết đăng ký */
+    display: block;
+    /* Đảm bảo liên kết chiếm không gian riêng */
+    color: #1e3a5f;
+    /* Màu chữ xanh dương đậm */
+    text-decoration: none;
+    /* Bỏ gạch chân */
+    font-size: 14px;
+    /* Kích thước chữ */
+  }
+  
+  .register-link:hover {
+    text-decoration: underline;
+    /* Gạch chân khi hover */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .login-box {
+        width: 90%;
+    }
+  }
+  
+  

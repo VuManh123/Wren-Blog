@@ -1,0 +1,87 @@
+<div class="card aside-card" style="margin-top: 100px;">
+  <div class="title-container">
+
+    <!-- Metadata -->
+    <div class="profile-card">
+      <figure class="profile-banner img-holder">
+        <img [src]="blog?.author?.profileImage" width="32" height="32" loading="lazy" [alt]="blog?.author?.name">
+      </figure>
+
+      <div>
+        <p class="card-title">{{ blog?.author?.name }}</p>
+        <time class="card-date" [attr.datetime]="blog.created_at">
+          Posted on {{ blog?.createdAt | date: 'd MMMM y' }}
+        </time>
+      </div>
+    </div>
+    <!-- Dropdown chọn ngôn ngữ -->
+    <select class="language-select" (change)="onLanguageChange($event)">
+      <option *ngFor="let language of languages" [value]="language" [selected]="language === selectedLanguage">
+        {{ language }}
+      </option>
+    </select>
+  </div>
+
+
+
+  <!-- Nội dung blog -->
+  <div *ngIf="filteredBlogContent">
+    <h4 class="headline headline-2 aside-title" style="margin-top: 20px;">
+      <span class="span">{{ filteredBlogContent.title }}</span>
+    </h4>
+
+    <div>
+      <div [innerHTML]="filteredBlogContent.mainContent"></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card aside-card" style="margin-top: 60px;">
+  <div *ngIf="comments.length > 0" class="comment-section" style="margin-top: 0;">
+    <h3 class="headline headline-2 aside-title">
+      <span class="span" style="margin-top: 0;">Last Comment</span>
+    </h3>
+
+    <div class="new-comment-section" style="margin-top: 20px; margin-bottom: 20px">
+      <input type="text" id="new-comment-input" placeholder="Enter your comment..."
+        style="width: 100%; padding: 10px; margin-top: 10px;" class="custom-placeholder" [(ngModel)]="newCommentContent"
+        (keyup.enter)="postNewComment()">
+    </div>
+
+    <ul class="comment-list">
+      <li *ngFor="let comment of comments">
+        <div class="comment-card">
+
+          <blockquote class="card-text">
+            {{ comment.content }}
+          </blockquote>
+
+
+          <div class="profile-card">
+            <figure class="profile-banner img-holder">
+              <img [src]="comment.user.profileImage" width="32" height="32" loading="lazy" [alt]="comment.user.name">
+            </figure>
+
+            <div>
+              <p class="card-title">{{ comment.user.name }}</p>
+              <time class="card-date" [attr.datetime]="comment.created_at">
+                {{ comment.created_at | date: 'd MMMM y' }}
+              </time>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Hiển thị nếu không có bình luận -->
+  <div *ngIf="comments.length === 0" class="no-comments">
+    <p>No comments available for this blog post.</p>
+    <div class="new-comment-section" style="margin-top: 20px; margin-bottom: 20px">
+      <input type="text" id="new-comment-input" placeholder="Enter your comment..."
+        style="width: 100%; padding: 10px; margin-top: 10px;" class="custom-placeholder" [(ngModel)]="newCommentContent"
+        (keyup.enter)="postNewComment()">
+    </div>
+  </div>
+</div>

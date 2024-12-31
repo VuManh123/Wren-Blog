@@ -1,0 +1,31 @@
+<div class="edit-blog-container">
+    <h2 class="title">Edit Blog</h2>
+    <form (submit)="onSubmit($event)" class="edit-blog-form">
+      
+      <div class="form-group">
+        <label for="language">Select Language:</label>
+        <select [(ngModel)]="selectedLanguageId" name="language" id="language" (change)="onLanguageChange($event)" required>
+          <option *ngFor="let language of languages" [value]="language.id">
+            {{ language.name }}
+          </option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" [(ngModel)]="currentBlogContent.title" name="title" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="content">Content:</label>
+        <div #editor></div>
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" class="btn-submit" [disabled]="!currentBlogContent.title || !currentBlogContent.main_content || !selectedLanguageId">
+          Update
+        </button>
+      </div>
+    </form>
+  </div>
+  
