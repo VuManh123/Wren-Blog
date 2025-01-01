@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    apiUrl: 'http://localhost:3000' // URL của backend API
+    apiUrl: 'https://wren-blog.onrender.com' // URL của backend API
   };
   
