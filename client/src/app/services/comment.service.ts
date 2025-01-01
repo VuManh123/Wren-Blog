@@ -16,7 +16,7 @@ export interface Comment {
   providedIn: 'root',
 })
 export class CommentService {
-  private apiUrl = 'http://localhost:3000/comments'; // URL API
+  private apiUrl = 'https://wren-blog.onrender.com/comments'; // URL API
 
   constructor(private http: HttpClient) {}
 

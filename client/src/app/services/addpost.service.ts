@@ -9,35 +9,35 @@ export class AddPostService {
   constructor(private http: HttpClient) { }
 
   getCategories(): Observable<any> {
-    return this.http.get<any>('http://localhost:3000/categories');
+    return this.http.get<any>('https://wren-blog.onrender.com/categories');
   }
 
 
   getLanguages(): Observable<any> {
-    return this.http.get<any>('http://localhost:3000/languages');
+    return this.http.get<any>('https://wren-blog.onrender.com/languages');
   }
 
   uploadImage(file: File): Observable<{ url: string }> {
     const formData = new FormData();
     formData.append('image', file, file.name);
     // Gửi POST request tới endpoint upload ảnh
-    return this.http.post<{ url: string }>(`http://localhost:3000/api/upload/upload`, formData);
+    return this.http.post<{ url: string }>(`https://wren-blog.onrender.com/api/upload/upload`, formData);
   }
 
   submitPost(post: any): Observable<any> {
-    return this.http.post(`http://localhost:3000/posts`, post);
+    return this.http.post(`https://wren-blog.onrender.com/posts`, post);
   }
 
   submitLanguage(postData: any, blogId: number): Observable<any> {
-    return this.http.post(`http://localhost:3000/posts/${blogId}/add-language`, postData);
+    return this.http.post(`https://wren-blog.onrender.com/posts/${blogId}/add-language`, postData);
   }
   
   getBlogContents(blogId: number): Observable<any> {
-    return this.http.get(`http://localhost:3000/posts/${blogId}/contents`);
+    return this.http.get(`https://wren-blog.onrender.com/posts/${blogId}/contents`);
   }
 
   updateBlogContent(postData: any): Observable<any> {
     const { blog_id, content_id, ...payload } = postData;
-    return this.http.put(`http://localhost:3000/posts/${blog_id}/contents/${content_id}`, payload);
+    return this.http.put(`https://wren-blog.onrender.com/posts/${blog_id}/contents/${content_id}`, payload);
   }
 }

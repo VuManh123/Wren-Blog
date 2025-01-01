@@ -9,7 +9,7 @@ import { jwtDecode } from 'jwt-decode';
     providedIn: 'root'
 })
 export class AuthService {
-    private apiUrl = 'http://localhost:3000/api';
+    private apiUrl = 'https://wren-blog.onrender.com/api';
 
     constructor(private http: HttpClient) { }
 
@@ -50,7 +50,7 @@ export class AuthService {
             return throwError('Không có token');
         }
 
-        return this.http.get('http://localhost:3000/api/user/profile', {
+        return this.http.get('https://wren-blog.onrender.com/api/user/profile', {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

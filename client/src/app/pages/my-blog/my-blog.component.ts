@@ -38,7 +38,7 @@ export class MyBlogComponent implements OnInit {
   getBlogsByUserId() {
     if (this.userId) {
       this.http
-        .get<any>('http://localhost:3000/blogRequire') // Địa chỉ API
+        .get<any>('https://wren-blog.onrender.com/blogRequire') // Địa chỉ API
         .subscribe(
           (response) => {
             if (response.success) {
@@ -70,7 +70,7 @@ export class MyBlogComponent implements OnInit {
   // Hàm xử lý xóa bài viết
   onDelete(blogId: number): void {
     if (confirm('Bạn có chắc chắn muốn xóa bài viết này không?')) {
-      this.http.delete(`http://localhost:3000/posts/${blogId}`).subscribe(
+      this.http.delete(`https://wren-blog.onrender.com/posts/${blogId}`).subscribe(
         () => {
           // Cập nhật lại danh sách bài viết sau khi xóa
           this.blogs = this.blogs.filter((blog) => blog.id !== blogId);

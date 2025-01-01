@@ -37,7 +37,7 @@ export interface Article {
   providedIn: 'root',
 })
 export class ArticleService {
-  private readonly apiUrl = 'http://localhost:3000/blogRequire';
+  private readonly apiUrl = 'https://wren-blog.onrender.com/blogRequire';
 
   constructor(private http: HttpClient) {}
 
