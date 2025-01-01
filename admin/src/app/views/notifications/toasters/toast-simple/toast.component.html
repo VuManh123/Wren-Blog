@@ -1,0 +1,10 @@
+<ng-container>
+  <c-toast-header [closeButton]="closeButton">
+    <strong>{{ title }}</strong>
+  </c-toast-header>
+  <c-toast-body #toastBody [cToastClose]="toastBody.toast">
+    <p class="mb-1">{{ body }}</p> <!-- Hiển thị body ở đây -->
+    <ng-content></ng-content>
+    <c-progress thin [value]="25*(toastBody.toast?.clock ?? 1)" />
+  </c-toast-body>
+</ng-container>

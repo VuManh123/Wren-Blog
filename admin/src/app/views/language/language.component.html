@@ -1,0 +1,154 @@
+<c-row>
+  <c-col xs>
+    <c-card class="mb-4">
+      <c-card-header>All Of Languages</c-card-header>
+      <c-card-body>
+        <!-- Các nút hành động -->
+        <div class="d-flex justify-content-between mb-3">
+          <div>
+            <button cButton color="primary" variant="outline" class="me-2" (click)="addLanguage()">
+              <svg [cIcon]="icons.cilPlus" class="me-2"></svg>Add Language
+            </button>
+            <!-- Modal Add Language -->
+            <c-modal id="addLanguageModal" [visible]="addModalVisible" (visibleChange)="handleAddModalClose($event)">
+              <c-modal-header>
+                <p style="font-size: 20px; margin-bottom: 0;">Add Language</p>
+                <button (click)="closeAddModal()" cButtonClose></button>
+              </c-modal-header>
+              <c-modal-body>
+                <div class="mb-3">
+                  <label cLabel for="name">Name</label>
+                  <input cFormControl id="name" type="text" [(ngModel)]="newLanguage.name" />
+                </div>
+                <div class="mb-3">
+                  <label cLabel for="name">Code</label>
+                  <input cFormControl id="code" type="text" [(ngModel)]="newLanguage.code" />
+                </div>
+                <div class="mb-3">
+                  <label cLabel for="name">Region</label>
+                  <input cFormControl id="region" type="text" [(ngModel)]="newLanguage.region" />
+                </div>
+                <div class="mb-3">
+                  <label cLabel for="status">Status</label>
+                  <select cSelect id="inputStatus" [value]="selectedLanguage?.status" [(ngModel)]="newLanguage.status">
+                    <option>active</option>
+                    <option>inactive</option>
+                  </select>
+                </div>
+
+              </c-modal-body>
+              <c-modal-footer>
+                <button (click)="closeAddModal()" cButton color="primary">Close</button>
+                <button cButton color="secondary" (click)="addNewLanguage()">
+                  Add Language
+                </button>
+              </c-modal-footer>
+            </c-modal>
+
+            <button cButton color="primary" variant="outline" (click)="toggleLiveExport()">
+              <svg [cIcon]="icons.cilVerticalAlignBottom" class="me-2"></svg>Export List
+            </button>
+            <!-- Modal for export -->
+            <c-modal id="liveExportModal" [visible]="liveExportVisible"
+              (visibleChange)="handleLiveExportChange($event)">
+              <c-modal-header>
+                <p style="font-size: 20px; margin-bottom: 0;">Export Language</p>
+                <button (click)="toggleLiveExport()" cButtonClose></button>
+              </c-modal-header>
+              <c-modal-body>Are you sure you want to export list of language?</c-modal-body>
+              <c-modal-footer>
+                <button (click)="toggleLiveExport()" cButton color="primary">
+                  Close
+                </button>
+                <button cButton color="secondary" (click)="exportToExcel()">Export</button>
+              </c-modal-footer>
+            </c-modal>
+
+          </div>
+          <!-- Ô tìm kiếm -->
+          <div>
+            <input type="text" [(ngModel)]="searchQuery" placeholder="Search..." class="form-control"
+              style="width: 250px" />
+          </div>
+        </div>
+
+        <!-- Bảng dữ liệu -->
+        <table [hover]="true" [responsive]="true" [striped]="true" cTable class="mb-0 border">
+          <thead class="text-nowrap text-truncate">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Code</th>
+              <th>Region</th>
+              <th>Status</th>
+              <th>Created Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let language of filteredLanguages; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ language.name }}</td>
+              <td>{{ language.code }}</td>
+              <td>{{ language.region }}</td>
+              <td>{{ language.status }}</td>
+              <td>{{ language.createdAt | date: 'dd/MM/yyyy HH:mm' }}</td>
+              <td>
+                <div class="action-buttons" style="display: flex; gap: 8px;">
+                  <button cButton color="warning" (click)="editLanguage(language)">
+                    <svg [cIcon]="icons.cilPencil"></svg>
+                  </button>
+                  
+
+                  <button cButton color="danger" (click)="toggleLiveDelete(language)">
+                    <svg [cIcon]="icons.cilTrash"></svg>
+                  </button>
+                  
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>
+
+<app-toasters #toastComponent></app-toasters>
+<!-- Modal Edit -->
+<c-modal id="editLanguageModal" [visible]="editModalVisible"
+(visibleChange)="handleEditModalClose($event)">
+<c-modal-header>
+  <p style="font-size: 20px; margin-bottom: 0;">Edit Language</p>
+  <button (click)="closeEditModal()" cButtonClose></button>
+</c-modal-header>
+<c-modal-body>
+  <div class="mb-3">
+    <label cLabel for="name">Change status</label>
+    <select cSelect id="inputStatus" [value]="selectedLanguage?.status" [(ngModel)]="newLanguage.status">
+      <option>active</option>
+      <option>inactive</option>
+    </select>
+  </div>
+</c-modal-body>
+<c-modal-footer>
+  <button (click)="closeEditModal()" cButton color="primary">Close</button>
+  <button cButton color="warning" (click)="onEdit()">Save Changes</button>
+</c-modal-footer>
+</c-modal>
+<!-- Modal for delete -->
+<c-modal id="liveDeleteModal" [visible]="liveDeleteVisible"
+(visibleChange)="handleLiveDeleteChange($event)">
+<c-modal-header>
+  <p style="font-size: 20px; margin-bottom: 0;">Delete Language</p>
+  <button (click)="closeDeleteModal()" cButtonClose></button>
+</c-modal-header>
+<c-modal-body>Are you sure you want to delete this language?</c-modal-body>
+<c-modal-footer>
+  <button (click)="closeDeleteModal()" cButton color="primary">
+    Close
+  </button>
+  <button cButton color="danger" (click)="onDelete(selectedLanguage)">Delete</button>
+</c-modal-footer>
+</c-modal>

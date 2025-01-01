@@ -8,6 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     bio: DataTypes.TEXT,
     created_at: DataTypes.DATE,
     updated_at: DataTypes.DATE,
+    role_id: DataTypes.STRING,
+    active: DataTypes.STRING
   }, {
     underscored: false,  // Sử dụng camelCase cho tên các trường (ví dụ: createdAt, updatedAt)
     timestamps: false     // Không sử dụng các trường createdAt và updatedAt mặc định của Sequelize

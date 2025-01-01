@@ -12,17 +12,17 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Categories',
-    url: '/categories',
+    url: '/category',
     iconComponent: { name: 'cil-list' }
   },
   {
     name: 'Users',
-    url: '/users',
+    url: '/user',
     iconComponent: { name: 'cil-people' }
   },
   {
     name: 'Languages',
-    url: '/languages',
+    url: '/language',
     iconComponent: { name: 'cil-language' }
   },
   {
@@ -32,7 +32,8 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Log out',
-    url: '/logout',
+    url: 'javascript:void(0)',  // Giữ URL là 'javascript:void(0)' để không điều hướng
     iconComponent: { name: 'cil-account-logout' }
   }
 ];
+

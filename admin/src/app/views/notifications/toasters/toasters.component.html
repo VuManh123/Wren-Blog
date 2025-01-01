@@ -1,0 +1,7 @@
+<c-row>
+    <c-col xs="12">
+        @for (pos of positions | slice : 1; track pos) {
+        <c-toaster [ngClass]="'p-3'" position="fixed" placement="{{pos}}" />
+        }
+    </c-col>
+</c-row>

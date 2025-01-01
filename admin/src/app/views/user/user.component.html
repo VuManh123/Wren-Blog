@@ -1,0 +1,161 @@
+<c-row>
+  <c-col xs>
+    <c-card class="mb-4">
+      <c-card-header>All Of Users</c-card-header>
+      <c-card-body>
+        <!-- Các nút hành động -->
+        <div class="d-flex justify-content-between mb-3">
+          <div>
+            <button cButton color="primary" variant="outline" (click)="toggleLiveExport()">
+              <svg [cIcon]="icons.cilVerticalAlignBottom" class="me-2"></svg>Export List
+            </button>
+            <!-- Modal for export -->
+            <c-modal id="liveExportModal" [visible]="liveExportVisible"
+              (visibleChange)="handleLiveExportChange($event)">
+              <c-modal-header>
+                <p style="font-size: 20px; margin-bottom: 0;">Export User</p>
+                <button (click)="toggleLiveExport()" cButtonClose></button>
+              </c-modal-header>
+              <c-modal-body>Are you sure you want to export list of user?</c-modal-body>
+              <c-modal-footer>
+                <button (click)="toggleLiveExport()" cButton color="primary">
+                  Close
+                </button>
+                <button cButton color="secondary" (click)="exportToExcel()">Export</button>
+              </c-modal-footer>
+            </c-modal>
+          </div>
+          <!-- Ô tìm kiếm -->
+          <div>
+            <input type="text" [(ngModel)]="searchQuery" placeholder="Search..." class="form-control"
+              style="width: 250px" />
+          </div>
+        </div>
+
+        <!-- Bảng dữ liệu -->
+        <table [hover]="true" [responsive]="true" [striped]="true" cTable class="mb-0 border">
+          <thead class="text-nowrap text-truncate">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Created Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of filteredUsers; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>
+                <ng-container [ngSwitch]="user.role_id">
+                  <span *ngSwitchCase="1">Admin</span>
+                  <span *ngSwitchDefault>User</span>
+                </ng-container>
+              </td>
+              <td>{{ user.created_at | date: 'dd/MM/yyyy HH:mm' }}</td>
+              <td>
+                <ng-container [ngSwitch]="user.active">
+                  <span *ngSwitchCase="0">Inactive</span>
+                  <span *ngSwitchCase="1">Active</span>
+                  <span *ngSwitchCase="3">Banned</span>
+                  <span *ngSwitchDefault>Unknown</span>
+                </ng-container>
+              </td>
+              <td>
+                <div class="action-buttons" style="display: flex; gap: 8px;">
+                  <button cButton color="info" (click)="viewUser(user)">
+                    <svg [cIcon]="icons.cilZoom"></svg>
+                  </button>
+
+
+
+                  <button cButton color="warning" (click)="editUserModal(user)">
+                    <svg [cIcon]="icons.cilPencil"></svg>
+                  </button>
+
+                </div>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>
+
+<!-- Modal for view -->
+<c-modal id="viewUserModal" [visible]="viewModalVisible" (visibleChange)="handleModalClose($event)">
+  <c-modal-header>
+    <p style="font-size: 20px; margin-bottom: 0;">User Infomation</p>
+    <button (click)="closeModal()" cButtonClose></button>
+  </c-modal-header>
+  <c-modal-body>
+    <div class="row g-3">
+      <!-- Phần hiển thị hình ảnh -->
+      <div class="col-md-4">
+        <img [src]="selectedUser?.profileImage" alt="User Image" class="img-fluid rounded shadow-sm" />
+      </div>
+      <!-- Phần hiển thị thông tin -->
+      <div class="col-md-8">
+        <p class="text-muted mb-1">
+          <strong>User Name:</strong> {{ selectedUser?.name }}
+        </p>
+        <p class="text-muted mb-1">
+          <strong>Email:</strong> {{ selectedUser?.email }}
+        </p>
+        <p class="text-muted mb-1">
+          <strong>Role:</strong>
+          <span *ngIf="selectedUser?.role_id === 1">Admin</span>
+          <span *ngIf="selectedUser?.role_id !== 1">User</span>
+        </p>
+        <p class="text-muted mb-1">
+          <strong>Status:</strong>
+          <span *ngIf="selectedUser?.active === 0">Inactive</span>
+          <span *ngIf="selectedUser?.active === 1">Active</span>
+          <span *ngIf="selectedUser?.active === 3">Banned</span>
+        </p>
+        <p class="text-muted mb-1">
+          <strong>Created Date:</strong> {{ selectedUser?.created_at | date: 'dd/MM/yyyy HH:mm'
+          }}
+        </p>
+        <p class="text-muted mb-0">
+          <strong>Updated Date:</strong> {{ selectedUser?.updated_at | date: 'dd/MM/yyyy HH:mm'
+          }}
+        </p>
+      </div>
+    </div>
+  </c-modal-body>
+  <c-modal-footer>
+    <button (click)="closeModal()" cButton color="primary">Close</button>
+  </c-modal-footer>
+</c-modal>
+
+<!-- Modal Edit -->
+<c-modal id="editUserModal" [visible]="editModalVisible" (visibleChange)="handleEditModalClose($event)">
+  <c-modal-header>
+    <p style="font-size: 20px; margin-bottom: 0;">Edit User</p>
+    <button (click)="closeEditModal()" cButtonClose></button>
+  </c-modal-header>
+  <c-modal-body>
+    <div class="mb-3">
+      <label cLabel for="name">Change status</label>
+      <select cSelect id="inputStatus" [value]="selectedUser?.active" [(ngModel)]="editUser.active">
+        <option [value]="1">Active</option>
+        <option [value]="3">Banned</option>
+        <option [value]="0">Inactive</option>
+      </select>
+    </div>
+  </c-modal-body>
+  <c-modal-footer>
+    <button (click)="closeEditModal()" cButton color="primary">Close</button>
+    <button cButton color="warning" (click)="onEdit()">Save Changes</button>
+  </c-modal-footer>
+</c-modal>
+
+<app-toasters #toastComponent></app-toasters>
