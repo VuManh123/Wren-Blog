@@ -25,15 +25,8 @@
                   <input cFormControl id="code" type="text" [(ngModel)]="newLanguage.code" />
                 </div>
                 <div class="mb-3">
-                  <label cLabel for="name">Region</label>
-                  <input cFormControl id="region" type="text" [(ngModel)]="newLanguage.region" />
-                </div>
-                <div class="mb-3">
-                  <label cLabel for="status">Status</label>
-                  <select cSelect id="inputStatus" [value]="selectedLanguage?.status" [(ngModel)]="newLanguage.status">
-                    <option>active</option>
-                    <option>inactive</option>
-                  </select>
+                  <label cLabel for="name">Flag</label>
+                  <input cFormControl id="region" type="text" [(ngModel)]="newLanguage.flag" />
                 </div>
 
               </c-modal-body>
@@ -79,8 +72,7 @@
               <th>#</th>
               <th>Name</th>
               <th>Code</th>
-              <th>Region</th>
-              <th>Status</th>
+              <th>Flag</th>
               <th>Created Date</th>
               <th>Actions</th>
             </tr>
@@ -90,16 +82,17 @@
               <td>{{ i + 1 }}</td>
               <td>{{ language.name }}</td>
               <td>{{ language.code }}</td>
-              <td>{{ language.region }}</td>
-              <td>{{ language.status }}</td>
+              <td>
+                <img 
+                  *ngIf="language.flag" 
+                  [src]="language.flag" 
+                  alt="Flag" 
+                  style="width: 24px; height: 24px; object-fit: cover;" 
+                />
+              </td>
               <td>{{ language.createdAt | date: 'dd/MM/yyyy HH:mm' }}</td>
               <td>
-                <div class="action-buttons" style="display: flex; gap: 8px;">
-                  <button cButton color="warning" (click)="editLanguage(language)">
-                    <svg [cIcon]="icons.cilPencil"></svg>
-                  </button>
-                  
-
+                <div>
                   <button cButton color="danger" (click)="toggleLiveDelete(language)">
                     <svg [cIcon]="icons.cilTrash"></svg>
                   </button>
@@ -116,27 +109,6 @@
 </c-row>
 
 <app-toasters #toastComponent></app-toasters>
-<!-- Modal Edit -->
-<c-modal id="editLanguageModal" [visible]="editModalVisible"
-(visibleChange)="handleEditModalClose($event)">
-<c-modal-header>
-  <p style="font-size: 20px; margin-bottom: 0;">Edit Language</p>
-  <button (click)="closeEditModal()" cButtonClose></button>
-</c-modal-header>
-<c-modal-body>
-  <div class="mb-3">
-    <label cLabel for="name">Change status</label>
-    <select cSelect id="inputStatus" [value]="selectedLanguage?.status" [(ngModel)]="newLanguage.status">
-      <option>active</option>
-      <option>inactive</option>
-    </select>
-  </div>
-</c-modal-body>
-<c-modal-footer>
-  <button (click)="closeEditModal()" cButton color="primary">Close</button>
-  <button cButton color="warning" (click)="onEdit()">Save Changes</button>
-</c-modal-footer>
-</c-modal>
 <!-- Modal for delete -->
 <c-modal id="liveDeleteModal" [visible]="liveDeleteVisible"
 (visibleChange)="handleLiveDeleteChange($event)">

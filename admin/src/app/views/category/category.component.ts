@@ -7,10 +7,10 @@ import { FormDirective, FormLabelDirective, FormControlDirective } from '@coreui
 import { IconDirective } from '@coreui/icons-angular';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
-import { ToastersComponent } from 'src/app/views/notifications/toasters/toasters.component'
-import { CategoryService } from 'src/app/services/category.service';
+import { ToastersComponent } from '../notifications/toasters/toasters.component';
+import { CategoryService } from '../../services/category.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Category } from 'src/app/services/category.model'
+import { Category } from '../../services/category.model';
 import {
   cilList,
   cilShieldAlt,

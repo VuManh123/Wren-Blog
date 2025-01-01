@@ -28,6 +28,7 @@ export interface Article {
     language: {
       id: number;
       name: string;
+      flag: string;
     };
   }[];
 }

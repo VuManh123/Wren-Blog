@@ -2,19 +2,33 @@ const db = require('models'); // Đảm bảo rằng db đã được import đ�
 
 const commentService = {
   getAllComments: async () => {
-    return await db.Comment.findAll({
-      attributes: ['content', 'created_at', 'blog_id'],  // Chọn các trường cần thiết từ bảng Comments
-      include: [{
-        model: db.User,
-        as: 'user',
-        attributes: ['name', 'profileImage'],  // Chọn các trường cần thiết từ bảng Users
-      }],
-      order: [['created_at', 'ASC']]  // Có thể sắp xếp theo ngày tạo (tuỳ theo yêu cầu)
-    });
+    try {
+      return await db.Comment.findAll({
+        attributes: ['content', 'created_at', 'blog_id'],
+        include: [{
+          model: db.User,
+          as: 'user',
+          attributes: ['name', 'profileImage'],
+        }],
+        order: [['created_at', 'ASC']]
+      });
+    } catch (error) {
+      throw new Error('Error fetching comments: ' + error.message);
+    }
   },
+  
   createComment: async (data) => {
-    return await db.Comment.create(data);
+    if (!data.content || !data.blog_id) {
+      throw new Error("Content and blog_id are required");
+    }
+    
+    try {
+      return await db.Comment.create(data);
+    } catch (error) {
+      throw new Error('Error creating comment: ' + error.message);
+    }
   }
 };
 
 module.exports = commentService;
+

@@ -15,8 +15,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class MainBlogDetailComponent implements OnInit {
   blog: any; // Blog chi tiết
-  languages: string[] = []; // Danh sách ngôn ngữ có trong blog
-  selectedLanguage: string = ''; // Ngôn ngữ hiện tại được chọn
+  languages: { name: string, flag: string }[] = [];
+  selectedLanguage: { name: string, flag: string } | null = null;
   filteredBlogContent: any = null; // Nội dung blog lọc theo ngôn ngữ
   articleId!: number;
   userID!: number;
@@ -47,7 +47,13 @@ export class MainBlogDetailComponent implements OnInit {
           this.blog = response.data.find((article: Article) => article.id === this.articleId);
           if (this.blog) {
             // Lấy danh sách ngôn ngữ từ blogContent
-            this.languages = this.blog.blogContent.map((content: any) => content.language.name);
+            this.languages = this.blog.blogContent.map((content: any) => {
+              return {
+                name: content.language.name,
+                flag: content.language.flag,
+              };
+            });
+            console.log(this.languages);
 
             // Đặt ngôn ngữ mặc định là ngôn ngữ đầu tiên
             if (this.languages.length > 0) {
@@ -81,16 +87,18 @@ export class MainBlogDetailComponent implements OnInit {
   }
 
   // Xử lý khi thay đổi ngôn ngữ
-  onLanguageChange(event: Event): void {
-    this.selectedLanguage = (event.target as HTMLSelectElement).value;
+
+  onLanguageChange(language: any) {
+    this.selectedLanguage = language;
     this.updateFilteredContent();
   }
+  
 
   // Cập nhật nội dung blog theo ngôn ngữ
   private updateFilteredContent(): void {
     if (this.blog && this.blog.blogContent) {
       this.filteredBlogContent = this.blog.blogContent.find(
-        (content: any) => content.language.name === this.selectedLanguage
+        (content: any) => content.language.name === this.selectedLanguage?.name
       );
     }
   }
@@ -147,5 +155,10 @@ export class MainBlogDetailComponent implements OnInit {
       }
     );
   }
+  dropdownOpen = false;
+
+toggleDropdown() {
+  this.dropdownOpen = !this.dropdownOpen;
+}
   
 }

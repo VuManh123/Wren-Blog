@@ -23,7 +23,7 @@ const blogService = {
             {
               model: db.Language,
               as: 'language', // Sử dụng alias 'language' đã định nghĩa
-              attributes: ['id', 'name']
+              attributes: ['id', 'name', 'flag']
             }
           ]
         },

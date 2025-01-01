@@ -46,7 +46,8 @@ const blogController = {
           mainContent: content.main_content,
           language: content.language ? {
             id: content.language.id,
-            name: content.language.name
+            name: content.language.name,
+            flag: content.language.flag
           } : null
         })) || []
       }));

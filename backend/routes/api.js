@@ -51,6 +51,7 @@ router.get('/blogRequire', blogController.getAllRequire); //articles.json
 router.get("/categories", categoryController.getAll); //categories.json
 router.get("/comments", commentController.getAll); 
 router.post("/comments", commentController.create);
+
 // router.post("/posts", PostController.createPost);
 // router.delete('/posts/:id', PostController.deletePost);
 // router.post('/posts/:blog_id/add-language',PostController.addBlogContent);

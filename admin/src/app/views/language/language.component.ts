@@ -7,9 +7,9 @@ import { FormDirective, FormLabelDirective, FormControlDirective, FormSelectDire
 import { IconDirective } from '@coreui/icons-angular';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
-import { ToastersComponent } from 'src/app/views/notifications/toasters/toasters.component'
-import { LanguageService } from 'src/app/services/language.service';
-import {Language} from 'src/app/services/language.model'
+import { ToastersComponent } from '../notifications/toasters/toasters.component';
+import { LanguageService } from '../../services/language.service';
+import { Language } from '../../services/language.model';
 import { HttpClientModule } from '@angular/common/http';
 import {
   cilList,
@@ -77,7 +77,7 @@ export class LanguageComponent implements OnInit {
     return this.languages.filter(
       (language) =>
         language.name.toLowerCase().includes(query) ||
-        language.region.toLowerCase().includes(query)
+        language.flag.toLowerCase().includes(query)
     );
   }
 
@@ -95,14 +95,13 @@ export class LanguageComponent implements OnInit {
   newLanguage = {
     name: '',
     code: '',
-    region: '',
-    status: '',
+    flag: '',
   };
 
   // Hàm thêm danh mục mới
   addNewLanguage(): void {
     console.log('Clicked New Language!')
-    if (!this.newLanguage.name || !this.newLanguage.code || !this.newLanguage.region || !this.newLanguage.status) {
+    if (!this.newLanguage.name || !this.newLanguage.code || !this.newLanguage.flag) {
       this.toastComponent.addToastWithParams('Error', 'You must fill all of infomations', 'danger', 'top-end', true);
       return;
     }
@@ -128,7 +127,7 @@ export class LanguageComponent implements OnInit {
     );
 
     // Reset form sau khi thêm
-    this.newLanguage = { name: '', code: '', region: '', status: '', };
+    this.newLanguage = { name: '', code: '', flag: ''};
     this.closeAddModal();
   }
 
@@ -139,11 +138,8 @@ export class LanguageComponent implements OnInit {
     if (!this.newLanguage.code) {
       this.newLanguage.code = this.selectedLanguage?.code || '';
     }
-    if (!this.newLanguage.region) {
-      this.newLanguage.region = this.selectedLanguage?.region || '';
-    }
-    if (!this.newLanguage.status) {
-      this.newLanguage.status = this.selectedLanguage?.status || '';
+    if (!this.newLanguage.flag) {
+      this.newLanguage.flag = this.selectedLanguage?.flag || '';
     }
     
 
@@ -156,26 +152,8 @@ export class LanguageComponent implements OnInit {
 
     console.log('Edit Language:', editedLanguageData);
     // Thực hiện logic thêm vào danh sách hoặc gọi API
-    this.languageService.updateLanguageStatus(editedLanguageData.id, editedLanguageData.status).subscribe(
-      (response) => {
-        console.log('Language status updated successfully:', response);
-        this.toastComponent.addToastWithParams('Success',`Language status updated to ${editedLanguageData.status} successfully!`,'success','top-end',true);
-  
-        // Cập nhật status trong danh sách hiện tại
-        const index = this.languages.findIndex((lang) => lang.id === editedLanguageData.id);
-        if (index !== -1) {
-          this.languages[index].status = editedLanguageData.status;
-        }
-      },
-      (error) => {
-        this.toastComponent.addToastWithParams('Error',`Update language status to ${editedLanguageData.status} failed!`,'error','top-end',true);
-        console.error('Error updating language status:', error);
-      }
-    );
-
-
     // Reset form sau khi thêm
-    this.newLanguage = { name: '', code: '', region: '', status: '', };
+    this.newLanguage = { name: '', code: '', flag: ''};
     this.closeEditModal();
   }
 

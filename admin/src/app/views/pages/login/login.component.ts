@@ -4,8 +4,8 @@ import { IconDirective } from '@coreui/icons-angular';
 import { ContainerComponent, RowComponent, ColComponent, CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, FormControlDirective, ButtonDirective } from '@coreui/angular';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import {AuthService} from 'src/app/services/auth.service'
-import { ToastersComponent } from 'src/app/views/notifications/toasters/toasters.component'
+import { AuthService } from '../../../services/auth.service';
+import { ToastersComponent } from '../../notifications/toasters/toasters.component';
 
 @Component({
     selector: 'app-login',

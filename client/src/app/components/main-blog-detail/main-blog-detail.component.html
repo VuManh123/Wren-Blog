@@ -14,12 +14,20 @@
         </time>
       </div>
     </div>
-    <!-- Dropdown chọn ngôn ngữ -->
-    <select class="language-select" (change)="onLanguageChange($event)">
-      <option *ngFor="let language of languages" [value]="language" [selected]="language === selectedLanguage">
-        {{ language }}
-      </option>
-    </select>
+    
+    <div class="custom-dropdown">
+      <button class="dropdown-btn">
+        <img [src]="selectedLanguage?.flag" style="width: 20px; height: 14px; margin-right: 8px;" />
+        {{ selectedLanguage?.name }}
+      </button>
+      <div class="dropdown-content">
+        <div *ngFor="let language of languages" (click)="onLanguageChange(language)">
+          <img [src]="language.flag" style="width: 20px; height: 14px; margin-right: 8px;" />
+          {{ language.name }}
+        </div>
+      </div>
+    </div>
+    
   </div>
 
 

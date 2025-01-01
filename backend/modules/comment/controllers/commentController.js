@@ -7,20 +7,21 @@ const commentController = {
       const comments = await commentService.getAllComments();
       return responseUtils.ok(res, comments);
     } catch (error) {
-      return responseUtils.error(res, error.message);
+      console.error("Error fetching comments:", error);  // Log chi tiết lỗi
+      return responseUtils.error(res, error.message || "Internal server error");
     }
   },
+  
   create: async (req, res) => {
     try {
-      console.log("Request body:", req.body); // Kiểm tra dữ liệu nhận được từ client
+      console.log("Request body:", req.body);  // Kiểm tra dữ liệu nhận được từ client
       const comment = await commentService.createComment(req.body);
       return responseUtils.created(res, comment);
     } catch (error) {
-      console.error("Error:", error); // Log chi tiết lỗi
-      return responseUtils.error(res, "Internal server error"); // Sửa lại để trả đúng thông báo
+      console.error("Error creating comment:", error);  // Log chi tiết lỗi
+      return responseUtils.error(res, error.message || "Internal server error");
     }
   }
-  
 };
 
 module.exports = commentController;

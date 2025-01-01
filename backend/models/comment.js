@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     user_id: DataTypes.INTEGER
   },
   {
+    tableName: 'Comments',
     underscored: true,       // Sử dụng underscore cho tên cột
     timestamps: true         // Bật tự động xử lý created_at và updated_at
   });

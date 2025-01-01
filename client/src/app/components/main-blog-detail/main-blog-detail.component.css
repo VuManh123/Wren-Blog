@@ -69,3 +69,54 @@
   /* Justify text for a cleaner appearance */
   margin-top: 20px;
 }
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  min-width: 160px; /* Fix width of the button */
+  height: 40px; /* Set a fixed height for the button */
+}
+
+.dropdown-btn img {
+  margin-right: 8px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px; /* Fix width of the dropdown */
+  max-height: 200px; /* Set a maximum height for the dropdown */
+  overflow-y: auto; /* Enable scrolling if the content exceeds max height */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border: 1px solid #ccc;
+}
+
+.custom-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content div {
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-content div:hover {
+  background-color: #ddd;
+}
+
+.dropdown-content div img {
+  margin-right: 8px;
+}
