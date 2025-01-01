@@ -5,6 +5,6 @@
         "use": "@vercel/node"
       }
     ],
-    "outputDirectory": "dist/coreui-free-angular-admin-template"
+    "outputDirectory": "admin/dist/coreui-free-angular-admin-template"
   }
   
